@@ -7,3 +7,7 @@
 + **menuOpti** - оптимизированное шахматное меню
 + **menuLinear** - простое линейное меню
 + **menuLinearOptiPROGMEM** - оптимизированное линейное меню с приколами!
+
+## plotter
++ [Видос](https://www.youtube.com/watch?v=AybdnoNuiXE)
++ **plotterControl** - контроль синусоид
