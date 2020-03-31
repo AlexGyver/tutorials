@@ -29,7 +29,7 @@ void measure() {
   if (millis() - tmr >= 5) {
     tmr = millis();
     // ВЫБЕРИ СВОЙ ФИЛЬТР!
-    filtSignal = midArifm();
+    //filtSignal = midArifm();
     //filtSignal = midArifm2(getSignal());
     //filtSignal = runMiddleArifmBad(getSignal());
     //filtSignal = runMiddleArifm(getSignal());
@@ -46,11 +46,11 @@ void measure() {
 // имитация сигнала с датчика
 void process() {
   // синусоида
-  cleanSignal = 3.0 * sin(0.5 * radians(count));
+  //cleanSignal = 4.0 * sin(0.5 * radians(count));
 
   // квадрат
   if (count % 100 == 0) flag = !flag; // каждые 100 тиков инвертируем сигнал
-  //cleanSignal = flag * 3;  // делаем квадрат с амплитудой 5
+  cleanSignal = flag * 3;  // делаем квадрат с амплитудой 3
 }
 
 float getSignal() {
