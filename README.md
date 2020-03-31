@@ -11,3 +11,7 @@
 ## plotter
 + [Видос](https://www.youtube.com/watch?v=AybdnoNuiXE)
 + **plotterControl** - контроль синусоид
+
+## filters
++ [Видос](https://www.youtube.com/watch?v=AybdnoNuiXE)
++ **filterCore** - набор фильтров, можно поиграться с каждым
