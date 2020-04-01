@@ -88,7 +88,7 @@ float median(float newVal) {
   static float buf[3];
   static byte count = 0;
   buf[count] = newVal;
-  if (++count >= 2) count = 0;
+  if (++count >= 3) count = 0;
 
   float a = buf[0];
   float b = buf[1];
