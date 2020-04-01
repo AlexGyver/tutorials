@@ -13,5 +13,6 @@
 + **plotterControl** - контроль синусоид
 
 ## filters
-+ [Видос](https://www.youtube.com/watch?v=AybdnoNuiXE)
++ [Видос](https://www.youtube.com/watch?v=R6yvl90TiI8)
 + **filterCore** - набор фильтров, можно поиграться с каждым
++ **filterCore_v2** - добавлено несколько новых фильтов
