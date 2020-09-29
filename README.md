@@ -26,7 +26,7 @@
 
 ## motor1
 ### Примеры с мотором часть 1
-+ [Видос](https://www.youtube.com/watch?v=R6yvl90TiI8)
++ [Видос](https://youtu.be/tJYDV3FFCWQ)
 + **motorTest** - один мотор
 + **motorTest2** - два мотора
 + **joy** - управление с джойстика
