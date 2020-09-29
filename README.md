@@ -23,3 +23,11 @@
 + [Видос](https://www.youtube.com/watch?v=R6yvl90TiI8)
 + **filterCore** - набор фильтров, можно поиграться с каждым
 + **filterCore_v2** - добавлено несколько новых фильтов
+
+## motor1
+### Примеры с мотором часть 1
++ [Видос](https://www.youtube.com/watch?v=R6yvl90TiI8)
++ **motorTest** - один мотор
++ **motorTest2** - два мотора
++ **joy** - управление с джойстика
++ **smooth** - плавное управление с джойстика
