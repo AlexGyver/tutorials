@@ -28,18 +28,21 @@
 + **smooth** - плавное управление с джойстика
 
 ### triac - примеры с симистором
-+ [Видос]()
++ [Видос](https://youtu.be/dn1U4CFjmC4)
 + **smooth_1ch** - плавный 1 канал
 + **smooth_multi** - плавный многоканал
 + **brezenhem_1ch** - безтаймерный 1 канал
 + **brezenhem_multi** - безтаймерный многоканал
 
 ### relay - примеры с реле
-+ [Видос]()
++ [Видос](https://youtu.be/k2kRkYB9n2c)
 + **simpleRelay** - реле с гистерезисом
 + **gyverrelay** - пример GyverRelay с термистором
 
 ### pid - примеры с ПИД
-+ [Видос]()
++ [Видос](https://youtu.be/rIbWnB26dp0)
 + **simplePID** - функция пид из видео
 + **simplePID_advanced** - функция пид + ограничения
+
+### processing - примеры на Processing
++ **first_lesson** - [Урок #1](https://youtu.be/2fs1tuUUJRM) 
