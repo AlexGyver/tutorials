@@ -46,3 +46,6 @@
 
 ### processing - примеры на Processing
 + **first_lesson** - [Урок #1](https://youtu.be/2fs1tuUUJRM) 
+
+### soft_pwm_lesson - программный ШИМ
++ [Видос](https://youtu.be/UvxOwSfa3Zg) 
