@@ -49,3 +49,10 @@
 
 ### soft_pwm_lesson - программный ШИМ
 + [Видос](https://youtu.be/UvxOwSfa3Zg) 
+
+### strings - работа со String и cstring
++ **strCstr** - примеры и сравнения String, cstring, mString
+
+### parsing - парсим Serial по всякому
++ **parseSerial** - много всего по чтению
++ **sendSerial** - скетч управляющей Ардуины
