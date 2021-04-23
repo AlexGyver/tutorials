@@ -51,6 +51,7 @@
 + [Видос](https://youtu.be/UvxOwSfa3Zg) 
 
 ### strings - работа со String и cstring
++ [Видос]((https://youtu.be/1VgePUaF7R8)
 + **strCstr** - примеры и сравнения String, cstring, mString
 
 ### parsing - парсим Serial по всякому
