@@ -51,9 +51,16 @@
 + [Видос](https://youtu.be/UvxOwSfa3Zg) 
 
 ### strings - работа со String и cstring
-+ [Видос]((https://youtu.be/1VgePUaF7R8)
++ [Видос](https://youtu.be/1VgePUaF7R8)
 + **strCstr** - примеры и сравнения String, cstring, mString
 
 ### parsing - парсим Serial по всякому
++ [Видос](https://youtu.be/Ul03Vkg9A40)
 + **parseSerial** - много всего по чтению
 + **sendSerial** - скетч управляющей Ардуины
+
+### processingSerial - программа для общения с Arduino на Processing
++ [Видос](https://youtu.be/IfWxl5LhJE8)
++ **blank** - "чистые" примеры. Порт и парсинг, ничего лишнего
++ **from video** - примеры из видео, как они есть
++ **updated** - улучшенные примеры из видео
