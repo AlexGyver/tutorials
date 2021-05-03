@@ -4,7 +4,8 @@
 ## Как скачать?
 Я использую этот репозиторий просто как облачное хранилище с возможностью удобно посмотреть код в браузере. 
 - Можно скачать любой нужный файл, открыв его содержимое / правой кнопкой мыши по кнопке **Raw** в правом верхнем углу экрана / сохранить ссылку как.  
-- Также можно скачать весь репозиторий целиком, нажав **Code/Download ZIP** на главной странице репозитория, либо кликнуть вот [по этой ссылке](https://github.com/AlexGyver/tutorials/archive/refs/heads/master.zip).
+- Также можно скачать весь репозиторий целиком, нажав **Code/Download ZIP** на главной странице репозитория (где вы читаете этот текст), либо кликнуть вот [по этой ссылке](https://github.com/AlexGyver/tutorials/archive/refs/heads/master.zip).
+![img](https://raw.githubusercontent.com/AlexGyver/tutorials/master/download.png)
 
 ### menu/encoder - примеры с меню
 + [Видос](https://www.youtube.com/watch?v=81HO2n6urjc)
