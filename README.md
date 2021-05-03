@@ -71,7 +71,7 @@
 + **from video** - примеры из видео, как они есть
 + **updated** - улучшенные примеры из видео
 
-### pythonSerialSerial - программа для общения с Arduino на Python
+### pythonSerial - программа для общения с Arduino на Python
 + [Видос](https://youtu.be/VGv7qOlzzgQ)
 + **blank** - "чистые" примеры. Порт и парсинг, ничего лишнего
 + **from video** - примеры из видео, как они есть
