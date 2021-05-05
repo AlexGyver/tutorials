@@ -14,6 +14,7 @@ serial.setBaudRate(115200)
 
 # прочитать порт
 def onRead():
+    if not serial.canReadLine(): return
     rx = serial.readLine()
     data = str(rx, 'utf-8').strip().split(',')  # подрезать и разбить по запятым
 
@@ -21,10 +22,10 @@ def onRead():
     if data[0] == '0':
         print(data[1])
 
-    if data[0] == '1':
+    elif data[0] == '1':
         print(data[1])
 
-    if data[0] == '2':
+    elif data[0] == '2':
         print(data[1])
 
 

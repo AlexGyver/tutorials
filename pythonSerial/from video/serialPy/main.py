@@ -28,6 +28,7 @@ for x in range(100): listY.append(0)
 
 
 def onRead():
+    if not serial.canReadLine(): return     # выходим если нечего читать
     rx = serial.readLine()
     rxs = str(rx, 'utf-8').strip()
     data = rxs.split(',')
