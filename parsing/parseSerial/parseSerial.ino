@@ -44,7 +44,7 @@ void loop() {
     prevAm = am;
     tmr = millis();
   }
-  if ((am & millis() - tmr > 10) || am > 60) {
+  if ((am && millis() - tmr > 10) || am > 60) {
     uint32_t us = micros();
     char str[150];
     int amount = Serial.readBytesUntil(';', str, 150);
