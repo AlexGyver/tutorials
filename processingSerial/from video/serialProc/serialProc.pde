@@ -113,7 +113,7 @@ void draw() {
   fill(fillVal);
   circle(x, y, 30);
 
-  println(mouseX, mouseY);
+  //println(mouseX, mouseY);
 
   if (serial != null) {
     if (serial.available() > 0) {
