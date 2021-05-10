@@ -7,6 +7,7 @@
 - Также можно скачать весь репозиторий целиком, нажав **Code/Download ZIP** на главной странице репозитория (где вы читаете этот текст), либо кликнуть вот [по этой ссылке](https://github.com/AlexGyver/tutorials/archive/refs/heads/master.zip).
 ![img](https://raw.githubusercontent.com/AlexGyver/tutorials/master/download.png)
 
+## Что внутри?
 ### menu/encoder - примеры с меню
 + [Видос](https://www.youtube.com/watch?v=81HO2n6urjc)
 + **menu** - простое шахматное меню
