@@ -52,7 +52,8 @@
 + **simplePID_advanced** - функция пид + ограничения
 
 ### processing - примеры на Processing
-+ **first_lesson** - [Урок #1](https://youtu.be/2fs1tuUUJRM) 
++ **first_lesson** - [Урок #1](https://youtu.be/2fs1tuUUJRM)
++ **physics** - [Урок #2](https://youtu.be/78N0t5BxQyY)
 
 ### soft_pwm_lesson - программный ШИМ
 + [Видос](https://youtu.be/UvxOwSfa3Zg) 
