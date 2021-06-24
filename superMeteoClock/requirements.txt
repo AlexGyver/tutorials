@@ -1,0 +1,23 @@
+# https://github.com/arduino-libraries/Servo
+Servo
+
+# https://github.com/GyverLibs/GyverOS
+GyverOS
+
+# https://github.com/GyverLibs/GyverNTC
+GyverNTC
+
+# https://github.com/GyverLibs/Tachometer
+Tachometer
+
+# https://github.com/GyverLibs/microDS3231
+microDS3231
+
+# https://github.com/GyverLibs/EncButton
+EncButton
+
+# https://github.com/GyverLibs/GRGB
+GRGB
+
+# https://github.com/johnrickman/LiquidCrystal_I2C
+LiquidCrystal I2C
