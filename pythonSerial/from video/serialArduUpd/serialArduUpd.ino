@@ -17,7 +17,7 @@
 #include <Servo.h>
 Servo servo;
 
-#include <microLiquidCrystal_I2C.h>
+#include <LiquidCrystal_I2C.h>
 
 // 0x27 или 0x3f
 LiquidCrystal_I2C lcd(0x27, 16, 2);
