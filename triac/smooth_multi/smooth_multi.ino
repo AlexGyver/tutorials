@@ -20,7 +20,7 @@ void setup() {
   Timer2.enableISR();
   // 37 мкс - период прерываний для 255 шагов и 50 Гц
   // для 60 Гц ставь число 31
-  Timer2.setPeriod(37); 
+  Timer2.setPeriod(37);
   Serial.begin(9600);
 }
 

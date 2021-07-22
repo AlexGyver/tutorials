@@ -1,0 +1,5 @@
+# https://github.com/GyverLibs/GyverEncoder
+GyverEncoder
+
+# https://github.com/johnrickman/LiquidCrystal_I2C
+LiquidCrystal I2C

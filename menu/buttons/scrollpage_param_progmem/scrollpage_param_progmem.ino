@@ -2,9 +2,9 @@
    Пример меню с вертикальным скроллингом при достижении указателем последней строки и прямым управлением параметрами
 */
 
-#define OLED_SOFT_BUFFER_64   // Буфер на стороне МК
-#include <GyverOLED.h>        // Библиотека дисплея
-GyverOLED oled;               // Обьект дисплея
+#define OLED_SOFT_BUFFER_64     // Буфер на стороне МК
+#include <GyverOLED.h>          // Библиотека дисплея
+GyverOLED<SSH1106_128x64> oled; // Обьект дисплея
 
 #include <GyverButton.h>      // Либа кнопок
 GButton up(3, HIGH_PULL);     // Кнопки
@@ -38,8 +38,8 @@ uint8_t data[ITEMS]; // Массив для параметров
 bool flag = true;    // Флаг выбора
 
 void setup() {
-  oled.init(OLED128x64, 500); // Инциализация дисплея
-  oled.setContrast(255);      // Макс. яркость
+  oled.init();           // Инциализация дисплея
+  oled.setContrast(255); // Макс. яркость
 }
 
 void loop() {

@@ -2,9 +2,9 @@
    Пример одностраничного меню с прямой регулировкой параметров (F macro)
 */
 
-#define OLED_SOFT_BUFFER_64   // Буфер на стороне МК
-#include <GyverOLED.h>        // Библиотека дисплея
-GyverOLED oled;               // Обьект дисплея
+#define OLED_SOFT_BUFFER_64     // Буфер на стороне МК
+#include <GyverOLED.h>          // Библиотека дисплея
+GyverOLED<SSH1106_128x64> oled; // Обьект дисплея
 
 #include <GyverButton.h>      // Либа кнопок
 GButton up(3, HIGH_PULL);     // Кнопки
@@ -22,8 +22,8 @@ uint8_t data[ITEMS]; // Массив для параметров
 bool flag = true;    // Флаг выбора
 
 void setup() {
-  oled.init(OLED128x64, 500); // Инциализация дисплея
-  oled.setContrast(255);      // Макс. яркость
+  oled.init();           // Инциализация дисплея
+  oled.setContrast(255); // Макс. яркость
 }
 
 void loop() {
@@ -71,8 +71,8 @@ void loop() {
 
   for (uint8_t i = 0; i < 8; i++) { // Цикл для вывода параметров (8 строк)
     oled.setCursor(14, i);          // Ставим курсор на позицию 14го сивола и номер строки
-    oled.print(data[i]);            // Выводим значение параметра 
-  } 
+    oled.print(data[i]);            // Выводим значение параметра
+  }
 
   printPointer(pointer);  // Вывод указателя
   oled.update();          // Выводим кадр на дисплей

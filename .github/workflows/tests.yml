@@ -1,0 +1,107 @@
+name: tests
+
+on:
+  push:
+    branches: [master, main]
+    paths-ignore: ['**.md']
+  pull_request:
+    paths-ignore: ['**.md']
+
+jobs: # Docs: <https://help.github.com/en/articles/workflow-syntax-for-github-actions>
+  lint:
+    name: Lint the sketches
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      # Its focus is on the structure, metadata, and configuration of Arduino projects, rather than the code
+      - name: Run the linter
+        uses: arduino/arduino-lint-action@v1 # https://github.com/arduino/arduino-lint-action
+        with:
+          project-type: sketch
+          recursive: true
+          library-manager: update
+          compliance: specification
+
+  search-for-sketches:
+    name: Search for sketches
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - id: set-sketches-matrix
+        run: |
+          echo "::set-output name=matrix::$(\
+            find . -mindepth 2 -type f -name "*.ino" -exec dirname "{}" \; |\
+              sort |\
+              uniq |\
+              jq -c -M --slurp --raw-input 'split("\n")[:-1]'\
+          )"
+    outputs:
+      matrix: ${{ steps.set-sketches-matrix.outputs.matrix }}
+
+  compile-sketch:
+    name: Compile the sketch (${{ matrix.sketch-directory }})
+    runs-on: ubuntu-20.04
+    needs: [search-for-sketches]
+    strategy:
+      fail-fast: false
+      matrix:
+        sketch-directory: ${{ fromJson(needs.search-for-sketches.outputs.matrix) }}
+        platform: ['arduino:avr']
+        fqbn: ['arduino:avr:uno']
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Setup Arduino CLI
+        uses: arduino/setup-arduino-cli@v1 # https://github.com/arduino/setup-arduino-cli
+
+      - name: Setup arduino-deps-installer # https://github.com/tarampampam/arduino-deps-installer
+        env:
+          VERSION: '0.0.1'
+        run: |
+          curl -SsL -o ./arduino-deps-installer \
+            "https://github.com/tarampampam/arduino-deps-installer/releases/download/v$VERSION/arduino-deps-installer-linux-amd64"
+          chmod +x ./arduino-deps-installer
+          sudo mv ./arduino-deps-installer /usr/bin/arduino-deps-installer
+
+      - name: Get Arduino CLI data directory
+        id: arduino-cli-data
+        run: echo "::set-output name=dir::$(arduino-cli config dump --format json | jq -r .directories.data)"
+
+      - name: Generate cache key values
+        id: cache-values
+        run: |
+          echo "::set-output name=salt::`\
+            echo $(date +'%U')'-${{ matrix.sketch-directory }}-${{ matrix.platform }}-${{ matrix.fqbn }}' |\
+              sha256sum |\
+              cut -d' ' -f 1\
+          `"
+          echo "::set-output name=requirements-file::${{ matrix.sketch-directory }}/requirements.txt"
+
+      - name: Cache Arduino CLI data
+        id: arduino-cli-cache
+        uses: actions/cache@v2
+        with:
+          path: ${{ steps.arduino-cli-data.outputs.dir }}
+          key: arduino-cli-data-v1-${{ steps.cache-values.outputs.salt }}-${{ hashFiles(steps.cache-values.outputs.requirements-file) }}
+          restore-keys: arduino-cli-data-v1-
+
+      - name: Updates the index of cores to the latest version
+        if: steps.arduino-cli-cache.outputs.cache-hit != 'true'
+        run: arduino-cli core update-index
+
+      - name: Install the platform
+        if: steps.arduino-cli-cache.outputs.cache-hit != 'true'
+        run: arduino-cli core install ${{ matrix.platform }}
+
+      - name: Install sketch dependencies
+        working-directory: ${{ matrix.sketch-directory }}
+        run: test -f ./requirements.txt && arduino-deps-installer install || true
+
+      - name: Compile the sketch
+        working-directory: ${{ matrix.sketch-directory }}
+        run: arduino-cli compile --warnings all --fqbn "${{ matrix.fqbn }}" .

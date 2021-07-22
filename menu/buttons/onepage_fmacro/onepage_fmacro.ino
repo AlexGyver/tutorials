@@ -2,9 +2,9 @@
    Пример простого одностраничного меню (F macro)
 */
 
-#define OLED_SOFT_BUFFER_64   // Буфер на стороне МК
-#include <GyverOLED.h>        // Библиотека дисплея
-GyverOLED oled;               // Обьект дисплея
+#define OLED_SOFT_BUFFER_64     // Буфер на стороне МК
+#include <GyverOLED.h>          // Библиотека дисплея
+GyverOLED<SSH1106_128x64> oled; // Обьект дисплея
 
 #include <GyverButton.h>      // Либа кнопок
 GButton up(3, HIGH_PULL);     // Кнопки
@@ -19,8 +19,8 @@ const uint8_t ptr_bmp[] PROGMEM = {
 };
 
 void setup() {
-  oled.init(OLED128x64, 500); // Инциализация дисплея
-  oled.setContrast(255);      // Макс. яркость
+  oled.init();           // Инциализация дисплея
+  oled.setContrast(255); // Макс. яркость
 }
 
 void loop() {
@@ -34,14 +34,14 @@ void loop() {
   if (up.isClick() or up.isHold()) {                // Если кнопку нажали или удерживают
     pointer = constrain(pointer - 1, 0, ITEMS - 1); // Двигаем указатель в пределах дисплея
   }
-  
+
   if (down.isClick() or down.isHold()) {
     pointer = constrain(pointer + 1, 0, ITEMS - 1);
   }
-  
+
   if (ok.isClick()) {   // Нажатие на ОК - переход в пункт меню
     switch (pointer) {  // По номеру указателей располагаем вложенные функции (можно вложенные меню)
-      case 0: func(); break;  // По нажатию на ОК при наведении на 0й пункт вызвать функцию 
+      case 0: func(); break;  // По нажатию на ОК при наведении на 0й пункт вызвать функцию
       case 1: break;
       case 2: break;
       case 3: break;

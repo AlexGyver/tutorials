@@ -1,11 +1,16 @@
 # Примеры к урокам
+
+[![Build Status][badge_build]][link_build]
+
 Сборник примеров к видеоурокам на канале [Заметки Ардуинщика](https://www.youtube.com/channel/UC4axiS76D784-ofoTdo5zOA/videos)
 
 ## Как скачать?
-Я использую этот репозиторий просто как облачное хранилище с возможностью удобно посмотреть код в браузере. 
-- Можно скачать любой нужный файл, открыв его содержимое / правой кнопкой мыши по кнопке **Raw** в правом верхнем углу экрана / сохранить ссылку как.  
+Я использую этот репозиторий просто как облачное хранилище с возможностью удобно посмотреть код в браузере.
+- Можно скачать любой нужный файл, открыв его содержимое / правой кнопкой мыши по кнопке **Raw** в правом верхнем углу экрана / сохранить ссылку как.
 - Также можно скачать весь репозиторий целиком, нажав **Code/Download ZIP** на главной странице репозитория (где вы читаете этот текст), либо кликнуть вот [по этой ссылке](https://github.com/AlexGyver/tutorials/archive/refs/heads/master.zip).
 ![img](https://raw.githubusercontent.com/AlexGyver/tutorials/master/download.png)
+
+> Все библиотеки, которые нужно установить для использования того или иного скетча описаны в файле `requirements.txt`, который расположен в самой директории скетча.
 
 ## Что внутри?
 ### menu/encoder - примеры с меню
@@ -56,7 +61,7 @@
 + **physics** - [Урок #2](https://youtu.be/78N0t5BxQyY)
 
 ### soft_pwm_lesson - программный ШИМ
-+ [Видос](https://youtu.be/UvxOwSfa3Zg) 
++ [Видос](https://youtu.be/UvxOwSfa3Zg)
 
 ### strings - работа со String и cstring
 + [Видос](https://youtu.be/1VgePUaF7R8)
@@ -80,3 +85,6 @@
 
 ### superMeteoClock - метеостанция мечты №2 (урок как написать скетч)
 + [Видос](https://youtu.be/P3xp2ZM8bA0)
+
+[badge_build]:https://img.shields.io/github/workflow/status/AlexGyver/tutorials/tests?maxAge=30
+[link_build]:https://github.com/AlexGyver/tutorials/actions

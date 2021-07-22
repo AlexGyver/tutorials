@@ -1,0 +1,11 @@
+# https://github.com/arduino-libraries/Servo
+Servo
+
+# https://github.com/johnrickman/LiquidCrystal_I2C
+LiquidCrystal I2C
+
+# Light library for LiquidCrystal_I2C
+./microLiquidCrystal_I2C.zip
+
+# https://github.com/GyverLibs/microWire required for "microLiquidCrystal_I2C"
+microWire
