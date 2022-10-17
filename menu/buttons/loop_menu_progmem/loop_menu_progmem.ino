@@ -34,7 +34,21 @@ const char* const names[] PROGMEM =           // Создаем массив с�
   i8, i9, i10, i11
 };
 
+int namesSizes[12];
+
 void setup() {
+  namesSizes[0] = sizeof(i0);
+  namesSizes[1] = sizeof(i1);
+  namesSizes[2] = sizeof(i2);
+  namesSizes[3] = sizeof(i3);
+  namesSizes[4] = sizeof(i4);
+  namesSizes[5] = sizeof(i5);
+  namesSizes[6] = sizeof(i6);
+  namesSizes[7] = sizeof(i7);
+  namesSizes[8] = sizeof(i8);
+  namesSizes[9] = sizeof(i9);
+  namesSizes[10] = sizeof(i10);
+  namesSizes[11] = sizeof(i11);
   oled.init();
   oled.setContrast(255);
 }
@@ -77,24 +91,32 @@ void loop() {
   }
 
   /* Указатель стоит на месте */
-  oled.setCursor(0, 0);
-  oled.print(">");
-  oled.setCursor(20, 0);
-  oled.print("<");
+//  oled.setCursor(0, 0);
+//  oled.print(">");
+//  oled.setCursor(20, 0);
+//  oled.print("<");
 
   oled.update();
 }
 
 // Функция для печати строки из prm
 void printMenuItem(uint8_t num) {
-  char buffer[21];                                // Буфер на полную строку
+  //char buffer[21];                                // Буфер на полную строку
+  int bufferSize = namesSizes[num];  //21
+  char buffer[bufferSize];  // Буфер на полную строку
   uint16_t ptr = pgm_read_word(&(names[num]));    // Получаем указатель на первый символ строки
   uint8_t i = 0;                                  // Переменная - счетчик
 
-  do {                                            // Начало цикла
-    buffer[i] = (char)(pgm_read_byte(ptr++));     // Прочитать в буфер один символ из PGM и подвинуть указатель на 1
-  } while (buffer[i++] != NULL);                  // Если это не конец строки - вернуться в начало цикла
-
+ // do {                                            // Начало цикла
+ //   buffer[i] = (char)(pgm_read_byte(ptr++));     // Прочитать в буфер один символ из PGM и подвинуть указатель на 1
+ // } while (buffer[i++] != NULL);                  // Если это не конец строки - вернуться в начало цикла
+  for (i = 0; i < bufferSize; i++) {
+    buffer[i] = (char)(pgm_read_byte(ptr++));
+  }
+    if (pointer1 == num) {
+    buffer[0] = 62;                                 // дорисовываем Указатель
+    //   buffer[bufferSize-1] = 60;
+  }
   oled.println(buffer);                           // Вывод готовой строки с переносом на следующую
 }
 
